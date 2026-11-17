@@ -2,7 +2,6 @@
 using Ars.Application.Services;
 using Ars.Data;
 using Microsoft.Extensions.DependencyInjection;
-using System.CommandLine;
 
 namespace Ars.Cli;
 
@@ -15,7 +14,11 @@ public class Program
         _serviceProvider = InitializeDependencies();
         LoadData();
         AppDomain.CurrentDomain.ProcessExit += Application_OnProcessExit;
+        Run();
+    }
 
+    private static void Run()
+    {
         var menu = _serviceProvider.GetRequiredService<IMenu>();
         var rootCommand = menu.Create();
 
