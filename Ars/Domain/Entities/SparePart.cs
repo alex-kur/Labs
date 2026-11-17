@@ -57,5 +57,5 @@ public class SparePart : IDomainEntity, IEquatable<SparePart>
         return Name == other.Name;
     }
 
-    public override string ToString() => $"Id: {Id}. {Name} Price: {UnitPrice:0.##} Stock quantity:{StockQuantity}";
+    public override string ToString() => $"Id: {Id}. {Name} Price: {UnitPrice:0.##}$ Stock quantity: {StockQuantity}";
 }

@@ -26,7 +26,6 @@ public class RepairOrder : IDomainEntity
         get => field;
         set
         {
-            //Validate.IsGreaterThanZero(value);
             Validate.IsGreaterOrEqualZero(value);
             field = value;
         }
